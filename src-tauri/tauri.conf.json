@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MU-TH-UR 6000",
+  "version": "0.1.0",
+  "identifier": "dev.muthur.terminal",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "MU/TH/UR 6000 — INTERFACE 2037",
+        "width": 1200,
+        "height": 860,
+        "minWidth": 700,
+        "minHeight": 540,
+        "backgroundColor": "#030603"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ipc: http://ipc.localhost; font-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'",
+      "devCsp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost ws://127.0.0.1:1420; font-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'",
+      "capabilities": ["terminal"]
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "shortDescription": "A procedural AI systems terminal",
+    "category": "DeveloperTool",
+    "icon": ["icons/icon.png", "icons/icon.ico"]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "identifier": "terminal",
+  "description": "Local terminal read-only tools and operator configuration. No shell or unrestricted filesystem plugin.",
+  "windows": ["main"],
+  "permissions": [
+    "core:event:allow-listen",
+    "core:event:allow-unlisten",
+    "core:window:allow-set-fullscreen",
+    "core:window:allow-is-fullscreen",
+    "allow-bootstrap",
+    "allow-run-tool",
+    "allow-save-settings",
+    "allow-record-history",
+    "allow-clear-history",
+    "allow-choose-directory",
+    "allow-revoke-directory",
+    "allow-set-credential",
+    "allow-delete-credential",
+    "allow-query",
+    "allow-cancel-query",
+    "allow-reset-conversation"
+  ]
+}

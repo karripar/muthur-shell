@@ -1,0 +1,31 @@
+[package]
+name = "muthur-shell"
+version = "0.1.0"
+description = "MU/TH/UR 6000 operator terminal"
+authors = ["MU/TH/UR contributors"]
+edition = "2021"
+
+[lib]
+name = "muthur_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "=2.5.3", features = [] }
+
+[dependencies]
+tauri = { version = "=2.9.5", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = "0.33"
+rusqlite = { version = "0.32", features = ["bundled"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+tokio = { version = "1", features = ["sync", "time", "process", "io-util"] }
+futures-util = "0.3"
+keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service", "crypto-rust"] }
+rfd = "0.15"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
